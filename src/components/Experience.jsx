@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const experiences = [
     {
@@ -28,7 +29,13 @@ export default function Experience(){
             <h2 className = "text-3xl font-bold text-pink-600 text-center mb-12"> Experience</h2>
             <div className = "max-w-4xl mx-auto space-y-8">
                 {experiences.map((job, index) => (
-                    <div key={index} className="bg-gray-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <motion.div 
+                    key={index} 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-pink-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
                         <h3 className = "text-xl font-semibold text-gray-800">
                             {job.role} <span className = "text-gray-500"> @{job.company}</span>
                         </h3>
@@ -38,7 +45,7 @@ export default function Experience(){
                                 <li key = {i}> {item}</li>
                             ))}
                         </ul>
-                    </div>
+                    </motion.div>
                 )
             )}      
             </div>

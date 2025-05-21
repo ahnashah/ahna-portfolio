@@ -8,7 +8,7 @@ const projects = [
             'Built a turn-based word game called “Capitals” using javascript.',
             'Led Agile sprints with user stories and test plans.',
             'Used the State pattern and SOLID principles for clean game logic.'],
-        link: null,
+        link: "https://github.com/ahnashah/lexicon",
     },
     {
         name: 'Wordle',
